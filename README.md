@@ -1,4 +1,4 @@
-# WordPress site as my first experince in web DevOps
+# WordPress site as my first experience in web DevOps
 
 My first step was download docker and docker-compose
 
