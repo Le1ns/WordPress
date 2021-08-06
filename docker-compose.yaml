@@ -1,4 +1,4 @@
-version: '3'
+version: '3.1'
 
 services:
   db:
@@ -39,6 +39,7 @@ services:
     restart: unless-stopped
     ports:
       - "80:80"
+      - "443:443"  
     volumes:
       - wordpress:/var/www/html
       - ./nginx-conf:/etc/nginx/conf.d
@@ -54,7 +55,7 @@ services:
     volumes:
       - certbot-etc:/etc/letsencrypt
       - wordpress:/var/www/html
-    command: certonly --webroot --webroot-path=/var/www/html --email Lagutka_98@mail.ru --agree-tos --no-eff-email --staging -d www.altezza34.space -d altezza34.space
+    command: certonly --webroot --webroot-path=/var/www/html --email Lagutka_98@mail.ru --agree-tos --no-eff-email --force-renewal -d www.altezza34.space -d altezza34.space
 
 volumes:
   certbot-etc:
