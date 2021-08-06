@@ -2,31 +2,31 @@ version: '3.1'
 
 services:
   db:
-    image: mysql:8.0
-    container_name: db
-    restart: unless-stopped
-    env_file: .env
+    image: mysql:8.0 #image 
+    container_name: db #name
+    restart: unless-stopped 
+    env_file: .env #files where we take info
     environment:
-      - MYSQL_DATABASE=wordpress
+      - MYSQL_DATABASE=wordpress #name of base
     volumes:
-      - dbdata:/var/lib/mysql
+      - dbdata:/var/lib/mysql #associated volume with local. /usr/bin/docker/volumes as i remember
     command: '--default-authentication-plugin=mysql_native_password'
     networks:
-      - app-network
+      - app-network #add to network
 
   wordpress:
     depends_on:
-      - db
-    image: wordpress:5.1.1-fpm-alpine
+      - db #start after db
+    image: wordpress:5.1.1-fpm-alpine #image
     container_name: wordpress
     restart: unless-stopped
     env_file: .env
-    environment:
+    environment: #it s take from .env file
       - WORDPRESS_DB_HOST=db:3306
       - WORDPRESS_DB_USER=$MYSQL_USER
       - WORDPRESS_DB_PASSWORD=$MYSQL_PASSWORD
       - WORDPRESS_DB_NAME=wordpress
-    volumes:
+    volumes: #usr/bin/docker/volumes/wordpress_wordpress (as i remember)
       - wordpress:/var/www/html
     networks:
       - app-network
@@ -37,13 +37,13 @@ services:
     image: nginx:1.15.12-alpine
     container_name: webserver
     restart: unless-stopped
-    ports:
+    ports: #from local to ":" docker
       - "80:80"
       - "443:443"  
     volumes:
       - wordpress:/var/www/html
-      - ./nginx-conf:/etc/nginx/conf.d
-      - certbot-etc:/etc/letsencrypt
+      - ./nginx-conf:/etc/nginx/conf.d #download from local storage to container nginx config
+      - certbot-etc:/etc/letsencrypt #storage of ssl
     networks:
       - app-network
 
