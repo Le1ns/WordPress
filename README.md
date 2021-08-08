@@ -13,6 +13,7 @@ nginx:1.15.12-alpine (container)
 
 <h2>Setting up the environment </h2>
 First is docker : instruction is https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04
+
 Second is docker-compose is https://www.digitalocean.com/community/tutorials/how-to-install-docker-compose-on-debian-10-ru
 Created .env and .gitignore (i didnt push .env in .gitingore)
 
