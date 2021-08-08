@@ -3,13 +3,14 @@
 My first step was download docker and docker-compose
 
 <h2>Requirements: </h2>
-Docker 20.10.7 (as last stable)
-docker-compose version 1.21.0, build unknown
-docker-py version: 3.4.1
-CPython version: 3.7.3
-wordpress:5.1.1 (container)
-mysql:8.0 (container)
-nginx:1.15.12-alpine (container)
+<ul>   
+<li>Docker 20.10.7 (as last stable)</li>
+<li>docker-compose version 1.21.0</li>
+<li>docker-py version: 3.4.1</li>
+<li>CPython version: 3.7.3</li>
+<li>wordpress:5.1.1 (container)</li>
+<li>mysql:8.0 (container)</li>
+<li>nginx:1.15.12-alpine (container)</li>
 
 <h2>Setting up the environment </h2>
 First is docker : instruction is https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04
