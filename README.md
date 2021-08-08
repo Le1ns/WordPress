@@ -23,7 +23,7 @@ I used guid for
  Four step was HTTPS. Going to instruction i rebuild nginx.conf and docker-compose.yaml (ports from local to container).
  Op op and it works! ok! Im happy! But i needed to reboot all containers not only webserver. It was strange but ok.
  
- Five step was MAIL. I started to study ways hoow i can do it. I have used plugin for mail smtp. Easy way to sent mails from ****@mail.ru or ****@yandex.ru but i wanted to use    mail with my domain. I tryed to use SMTP.COM, MailGUN but it cost some money. After ill try to use biz.mail.ru (russian mail.ru). It let to create domain mail free! 
+ Five step was MAIL. I started to study ways hoow i can do it. I have used plugin "WP MAIL SMTP". Easy way to sent mails from ****@mail.ru or ****@yandex.ru but i wanted to use    mail with my domain. I tryed to use SMTP.COM, MailGUN but it cost some money. After ill try to use biz.mail.ru (russian mail.ru). It let to create domain mail free! 
  I added new user noreply@altezza34.space and added few records (MX) to DNS on reg.ru (for domain verification and forwarding mail) and DKIM.
  Few tests and ok it works!
  
