@@ -11,13 +11,30 @@ I used guid for
   
  For creating site on WordPress i userd guid: https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-with-docker-compose-ru
  
- At first, i had trouble with domain. I tryed to use domain like le1ns13.wordpress.com or le1ns13ru.wordpress.com but i couldnt unite my local server and my wordpress domain.
- It was a big problem because the part of task is SSL cert and it depend form domain address.
- Few times i ruined my project and started again.
+ At first, i created my environment. Installed Git, Docker, Docker-compose.
  
- The next day i decide to buy my own domain. I think it s good experience btw. It cost just 100 rubles. So, i bought altezza34.space because my car is Altezza xD
+ Second time i created my domain name on reg.ru "altezza34.space". So, i get access to DNS and made associate ip and domain name.
  
- I bought it on Reg.ru and i got access to DNS list. I united ip addres with server and domain and great! It works!
+ Third time i created nginx.conf file and going instruction to create 4 containers "wordpress", "webserver", "certbot" and "db" in docker-compose.yaml.
+ I had some troubles with domain name because i tried to use domain from wordpress le1ns13ru.wordpress.com but i couldnt unite it (my local machine and wordpress domain).
+ Ater many tries i tryed to use my own domain. 1 Hour and it has worked already! It was http site but ok. 
+ I installed wordpress and started to explore it. It was my first experience. So, it s better then joomla which i admined.
+ 
+ Four step was HTTPS. Going to instruction i rebuild nginx.conf and docker-compose.yaml (ports from local to container).
+ Op op and it works! ok! Im happy! But i needed to reboot all containers not only webserver. It was strange but ok.
+ 
+ Five step was MAIL. I started to study ways hoow i can do it. I have used plugin for mail smtp. Easy way to sent mails from ****@mail.ru or ****@yandex.ru but i wanted to use    mail with my domain. I tryed to use SMTP.COM, MailGUN but it cost some money. After ill try to use biz.mail.ru (russian mail.ru). It let to create domain mail free! 
+ I added new user noreply@altezza34.space and added few records (MX) to DNS on reg.ru (for domain verification and forwarding mail) and DKIM.
+ Few tests and ok it works!
+ 
+ Six step was testing ssl certs. In instruction i see one script for reactivate SSL and puting it to crontab. So this cert u can see in my repository (ssl_renew.sh)
+ 
+ Between second and third step i tryed to study git actions. As i understand - if ok it should push it to master branch (as it should work and named pull request). But a did everything in master branch and created action to build all containers.
+ 
+ Im very sad that i didnt do it with ansible. I looked few videos about it. It means that i can made the same server like i did by remote commands. As i understand i need to pull main comands in playbook for up all containers and it likes pattern for up servers. I had an idea to make it but i i hadn't,sorry.
+ Thank you DeLaWeb for this task and im waiting your comments.
+ 
+ 
  
 
  
